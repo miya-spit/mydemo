@@ -1,0 +1,238 @@
+@charset "UTF-8";
+/* **************
+ * utility.css
+ * 2021-04-06 version 0.1
+ * ************** */
+/* =====================
+  Display関係
+===================== */
+.di{display  : inline;}
+.db{display  : block;}
+.dib{display : inline-block;}
+.dn{display  : none;}
+
+/* ==== flex ==== */
+.df{display  : flex;}
+.dif{display : inline-flex;}
+
+/* ==== table ==== */
+.dt{display  : table;}
+.dtr{display : table-row;}
+.dtc{display : table-cell;}
+
+/* ==== grid ==== */
+.dg{display : grid;display : -ms-grid;}
+
+/* ==== 空要素を非表示 ==== */
+.empty:empty{display: none;}
+
+
+/* =====================
+  flexbox
+===================== */
+/* ==== justify-content ==== */
+.jcs{justify-content : flex-start;}
+.jce{justify-content : flex-end;}
+.jcc{justify-content : center;}
+.jcb{justify-content : space-between;}
+.jca{justify-content : space-around;}
+
+/* ==== align-items ==== */
+.ais{align-items : flex-start;}
+.aie{align-items : flex-end;}
+.aic{align-items : center;}
+.aib{align-items : baseline;}
+
+/* ==== wrap ==== */
+.flxw{flex-wrap : wrap;}  /* 折返しを許可 */
+
+/* ==== grow ==== */
+.flxg{flex-grow : 1;}  /* 基準幅を指定 */
+
+/* ==== direction ==== */
+.flxd-col{flex-direction  : column;}          /* 縦並び */
+.flxd-colr{flex-direction : column-reverse;}  /* 縦並び - 逆 */
+.flxd-row{flex-direction  : row;}             /* 横並び */
+.flxd-rowr{flex-direction : row-reverse;}     /* 横並び - 逆 */
+
+
+/* =====================
+  表示関係
+===================== */
+/* ==== visibility ==== */
+.viv{visibility : visible;}
+.vih{visibility : hidden;}
+
+/* ==== overflow ==== */
+.ovv{overflow   : visible;}
+.ovh{overflow   : hidden;}
+.ovx{overflow-x : scroll;}
+.ovy{overflow-y : scroll;}
+
+
+/* =====================
+  サイズ関係
+===================== */
+/* ==== 幅 ==== */
+.wa{width    : auto;}
+.w100p{width : 100%;}
+.w50p{width  : 50%;}
+
+/* ==== 高さ ==== */
+.ha{height    : auto;}
+.h100p{height : 100%;}
+
+
+/* =====================
+  align関係
+===================== */
+/* ==== text-align ==== */
+.tal{text-align : left;}
+.tac{text-align : center;}
+.tar{text-align : right;}
+.taj{text-align : justify;}
+
+/* ==== vertical-align ==== */
+.vat{vertical-align : top;}
+.vam{vertical-align : middle;}
+.vab{vertical-align : bottom;}
+
+
+/* =====================
+  文字表示関係
+===================== */
+/* ==== 1行テキストのはみ出て分を「...」 ==== */
+.ellipsis{
+    text-overflow : ellipsis;
+    overflow      : hidden;
+    white-space   : nowrap;
+}
+
+
+/* =====================
+  文字装飾関係
+===================== */
+/* ==== font-weight ==== */
+.fwn{font-weight : normal;}
+.fwb{font-weight : bold;}
+
+/* ==== font-style ==== */
+.fsn{font-style : normal;}
+.fsi{font-style : italic;}
+
+/* ==== text-decoration ==== */
+.tdn{text-decoration : none;}
+.tdu{text-decoration : underline;}
+.tdl{text-decoration : line-through;}
+
+/* ==== white-space ==== */
+.wsnw{white-space : nowrap;}
+
+/* ==== 縦書き ==== */
+.vtext{
+    -webkit-writing-mode : vertical-rl;
+    -ms-writing-mode     : tb-rl;
+    writing-mode         : vertical-rl;
+}
+
+/* ==== 游明朝 ==== */
+.ff-mincho{
+    font-family : "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+}
+
+/* ==== 単位などのCSSで付加（ jsで内容を変更するときなどに便利 ） ==== */
+/* 内包テキストの 前 に文字 <div data-textbefore="￥">1,000</div> => ￥1,000 */
+[data-textbefore]::before{content: attr(data-textbefore)" ";}
+/* 内包テキストの 後 に文字 <div data-textbefore="円">1,000</div> => 1,000円 */
+[data-textafter]::after{content: attr(data-textafter)" ";}
+
+/* =====================
+  ボタン・要素 装飾関係
+===================== */
+/* ==== 角丸 ==== */
+.pill{border-radius    : 50rem;}  /* 長丸ボタン */
+.circle{border-radius  : 50%;}    /* 円 */
+
+/* ==== ポインター ==== */
+.cup{cursor : pointer;}
+
+/* ==== 操作無効 ==== */
+.disable{pointer-events : none; cursor : not-allowed;}
+
+
+/* =====================
+  DOM 位置関係
+===================== */
+/* ==== position ==== */
+.posr{position : relative;}
+.posa{position : absolute;}
+.posf{position : fixed;}
+
+/* ==== float ==== */
+.fll{float : left;}
+.flr{float : right;}
+.fln{float : none;}
+
+
+/* =====================
+  transform関係（他にtransformを与える時は使えません。）
+===================== */
+/* ==== 位置調整（親に posr 必須です。） ==== */
+/* 縦中横 中央寄せ */
+.trc{
+    position  : absolute;
+    top       : 50%;
+    left      : 50%;
+    transform : translate(-50%,-50%);
+}
+/* 縦 中央寄せ */
+.try{
+    position   : absolute;
+    top        : 50%;
+    transform  : translateY(-50%);
+}
+/* 横 中央寄せ */
+.trx{
+    position   : absolute;
+    left       : 50%;
+    transform  : translateX(-50%);
+}
+
+/* ==== 見た目調整 ==== */
+/* 左右反転 */
+.flipx{transform : scale(-1, 1);}
+.flipy{transform : scale(1 ,-1);}
+
+/* 右回転 rotate */
+.rodate45 {transform  : rotate(45deg);}   /* 右上 ↗ */
+.rodate90 {transform  : rotate(90deg);}   /* 右横 → */
+.rodate135{transform  : rotate(135deg);}  /* 右下 ↘ */
+.rodate180{transform  : rotate(180deg);}  /* 下   ↓ */
+.rodate225{transform  : rotate(225deg);}  /* 左下 ↙ */
+.rodate270{transform  : rotate(270deg);}  /* 左   ← */
+.rodate315{transform  : rotate(315deg);}  /* 左上 ↖ */
+
+
+/* =====================
+  DOM間調整関係
+===================== */
+/* ==== margin ==== */
+.mlr{margin-left : auto; margin-right: auto;}  /* 左右中央 */
+.mt0{margin-top  : 0;}
+.ml0{margin-left : 0;}
+
+/* ==== padding ==== */
+.pad0{padding      : 0;}
+.pat0{padding-top  : 0;}
+.pal0{padding-left : 0;}
+
+/* =====================
+  アニメーション関係
+===================== */
+/* ==== マウスオーバーで透過 ==== */
+.hover-op{transition: all 250ms ease 0s;will-change:opacity;}
+.hover-op:hover{opacity: 0.7;}
+@media screen and ( max-width:768px ) {
+    .hover-op:hover{opacity: 1;}
+    .hover-op:active{opacity: 0.7;}
+}
