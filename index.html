@@ -2,13 +2,55 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>便利なCSSデモ</title>
+<link rel="stylesheet" href="utility.css">
+<title>便利なCSS一部デモ</title>
+<style>
+    .demo-area{
+        background: #ddd;
+    }
+    .demo-button{
+        display: inline-block;
+        background: #5de3f1;
+    }
+    .demo-button.circle{
+        width: 45px;
+        height: 45px;
+        text-align: center;
+    }
+</style>
 </head>
 <body>
+<h1>便利なCSS一部デモ</h1>
 
+<fieldset>
+    <legend>文字表示関係</legend>
+    <div>1行テキストのはみ出てる分を「...」</div>
+    <p class="ellipsis demo-area" style="width:250px;">あいうえおかきくけこさしすせそたちつてと</p>
+</fieldset>
 
+<fieldset>
+    <legend>文字表示関係</legend>
+    <div>縦書き</div>
+    <p class="vtext demo-area">あいうえおかきくけこさしすせそたちつてと</p>
+    <hr>
+    <div>単位などのCSSで付加</div>
+    <div data-textbefore="￥">1,000</div>
+    <div data-textafter="円">1,000</div>
+</fieldset>
+
+<fieldset>
+    <legend>ボタン・要素 装飾関係</legend>
+    <div class="pill demo-button">長丸ボタン</div>
+    <hr>
+    <div class="circle demo-button">円</div>
+</fieldset>
+
+<fieldset>
+    <legend>アニメーション関係</legend>
+    <div>マウスオーバーで透過</div>
+    <a href="javascript:void(0);" class="hover-op" ontouchstart>マウスオーバーで透過</a>
+</fieldset>
 
 </body>
 </html>
